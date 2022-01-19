@@ -256,14 +256,19 @@ class TelloUI:
         if self.isMission:
             self.telloTakeOff()
             time.sleep(5)
+            self.telloResponse()
             self.telloMoveRight(100)
             time.sleep(5)
+            self.telloResponse()
             self.telloMoveForward(100)
             time.sleep(5)
+            self.telloResponse()
             self.telloMoveLeft(100)
             time.sleep(5)
+            self.telloResponse()
             self.telloMoveBackward(100)
             time.sleep(5)
+            self.telloResponse()
             self.telloLanding()
 
             self.isMission = False
@@ -342,6 +347,10 @@ class TelloUI:
 
     def telloDown(self, dist):
         return self.tello.move_down(dist)
+
+    def telloResponse(self):
+        return self.tello.get_response()
+    
 
     def updateTrackBar(self):
         self.my_tello_hand.setThr(self.hand_thr_bar.get())
