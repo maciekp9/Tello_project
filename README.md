@@ -6,7 +6,9 @@ PL
 
 
 1. Opis:
-  Celem naszego projektu z przedmiotu "Identyfikacja i sterowanie robotami latającymi" jest zeskanowanie obiektu za pomocą drona i stworzenie modelu 3D badanego przedmiotu. Plan został zrealizowany za pomocą robota latającego DJI Tello, oraz oprogramowania Recap od firmy Autodesk. 
+
+  Głównym założeniem naszego projektu z przedmiotu "Identyfikacja i sterowanie robotami latającymi" jest zeskanowanie obiektu za pomocą drona i stworzenie modelu 3D badanego przedmiotu. Plan został zrealizowany za pomocą robota latającego DJI Tello, oraz oprogramowania Recap od firmy Autodesk. 
+Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
 
 2. Cele projektu:
@@ -21,6 +23,9 @@ PL
 - Jak zrealizować lot po okręgu?
 6. Screenshots:
 7. Uruchomienie projektu:
+- instalacja biblioteki Tello-Python, wraz z niezbędnymi bibliotekami
+- uruchomienie skryptu 'main.py'
+- Naciśnięcie przycisku Start Mission
 
 
 
