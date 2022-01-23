@@ -11,8 +11,7 @@ PL
 Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
 Opis misji:
-![alt text](https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png)
-<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="100" height="100">
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="200" height="200">
 
 
 2. Cele projektu:
