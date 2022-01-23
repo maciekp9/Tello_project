@@ -49,7 +49,22 @@ EN
 
 
 1. Description:
-The main goal of our project for  
+
+The main idea of our project in the subject "Identification and Control of Flying Robots" is to scan an object with a drone and create a 3D model of the object under study. The plan was implemented using DJI Tello flying robot, and Recap software from Autodesk. The source code is a modification of a ready-made Tello-Python library published by user hanker-lu on GitHub. <br/><br/>
+
+Opis misji:<br/><br/>
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="400" height="400"> <br/><br/>
+<br/><br/>
+
+The figure above shows the four phases performed during our drone's mission. The essence of the mission is to fly around a circle and take some photographs of an object inside the circle (marked with a red dot).
+The steps performed: <br/>
+(a) The drone takes off from a starting point with coordinates (0,0). Position the drone so that the object to be photographed is in front of it. The drone rises, takes the first photo. <br/>
+b) A circular flight to the point "I" follows, after which a rotation is made to a position that allows the corresponding photo to be taken. At the end of this step, a photograph is taken. <br/>
+c) Point 'B' is repeated for positions 'II', 'III' and 'IV'.
+d) The drone will land. <br/>
+
+
+
 
 2. Goals of our project:
 - Launch the drone mission
@@ -60,6 +75,14 @@ The main goal of our project for
 
 
 3. Problems:
-
+- Incorrect mission execution? IMHO the solution to this problem is to ask the drone about the current status
+- How to complete a circular flight?
 
 4.Screenshots:
+
+
+7. How to run project:
+- Installation of the Tello-Python library, together with the necessary libraries
+- Running the 'main.py' script
+ Pressing the Start Mission button
+
