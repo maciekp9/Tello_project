@@ -10,15 +10,15 @@ PL
   Głównym założeniem naszego projektu z przedmiotu "Identyfikacja i sterowanie robotami latającymi" jest zeskanowanie obiektu za pomocą drona i stworzenie modelu 3D badanego przedmiotu. Plan został zrealizowany za pomocą robota latającego DJI Tello, oraz oprogramowania Recap od firmy Autodesk. 
 Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
-Opis misji:
+Opis misji:<br/><br/>
 <img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="400" height="400"> <br/><br/>
 
 
 Rysunek powyżej przedstawia cztery fazy wykonywane podczas misji naszego drona. Istotą zadania jest lot po okręgu i zrobienie paru fotografii obiektowi znajdującemu się wewnątrz okręgu (zaznaczony czerwoną kropką)
-a) Dron startuje z punktu początkowego o współrzędnych (0,0). Ustawiamy dron tak, aby na wprost niego znajdował się fotografowany przedmiot. Dron wznosi się, robi pierwsze zdjęcie.
-b) Następuje lot po okręgu do punktu "I", po czym wykonywany jest obrót do pozycji umożliwiającej zrobienie odpowiedniego zdjęcia. Pod koniec tego kroku wykonywana jest fotografia.
-c) Punkt 'B' powtarzany jest dla pozycji "II", "III" oraz "IV'.
-d) Dron ląduje.
+a) Dron startuje z punktu początkowego o współrzędnych (0,0). Ustawiamy dron tak, aby na wprost niego znajdował się fotografowany przedmiot. Dron wznosi się, robi pierwsze zdjęcie. <br/>
+b) Następuje lot po okręgu do punktu "I", po czym wykonywany jest obrót do pozycji umożliwiającej zrobienie odpowiedniego zdjęcia. Pod koniec tego kroku wykonywana jest fotografia. <br/>
+c) Punkt 'B' powtarzany jest dla pozycji "II", "III" oraz "IV'. <br/>
+d) Dron ląduje. <br/>
 
 
 2. Cele projektu:
