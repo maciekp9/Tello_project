@@ -11,7 +11,14 @@ PL
 Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
 Opis misji:
-<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="400" height="400">
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="400" height="400"> <br/><br/>
+
+
+Rysunek powyżej przedstawia cztery fazy wykonywane podczas misji naszego drona. Istotą zadania jest lot po okręgu i zrobienie paru fotografii obiektowi znajdującemu się wewnątrz okręgu (zaznaczony czerwoną kropką)
+a) Dron startuje z punktu początkowego o współrzędnych (0,0). Ustawiamy dron tak, aby na wprost niego znajdował się fotografowany przedmiot. Dron wznosi się, robi pierwsze zdjęcie.
+b) Następuje lot po okręgu do punktu "I", po czym wykonywany jest obrót do pozycji umożliwiającej zrobienie odpowiedniego zdjęcia. Pod koniec tego kroku wykonywana jest fotografia.
+c) Punkt 'B' powtarzany jest dla pozycji "II", "III" oraz "IV'.
+d) Dron ląduje.
 
 
 2. Cele projektu:
