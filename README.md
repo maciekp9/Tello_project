@@ -11,7 +11,7 @@ PL
 Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
 Opis misji:<br/><br/>
-<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/Opis misji1.PNG" width="400" height="400"> <br/><br/>
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/Opis misji1.PNG" width="600" height="400"> <br/><br/>
 
 
 Rysunek powyżej przedstawia poszczególne etapy wykonywane podczas misji naszego drona. Istotą zadania jest lot po wielokącie w sposób zbliżony do lotu po okręgu i wykonanie kilkunastu fotografii obiektowi znajdującemu się w centralnym punkcie okręgu (zaznaczony czerwoną kropką). <br/>
@@ -53,7 +53,7 @@ EN
 The main idea of our project in the subject "Identification and Control of Flying Robots" is to scan an object with a drone and create a 3D model of the object under study. The plan was implemented using DJI Tello flying robot, and Recap software from Autodesk. The source code is a modification of a ready-made Tello-Python library published by user hanker-lu on GitHub. <br/><br/>
 
 Description of the mission:<br/><br/>
-<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis_misji.png" width="400" height="400"> <br/><br/>
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/Opis misji1.PNG" width="600" height="400"> <br/><br/>
 <br/><br/>
 
 The figure above shows the four phases performed during our drone's mission. The essence of the mission is to fly around a circle and take some photographs of an object inside the circle (marked with a red dot).
