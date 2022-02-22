@@ -11,7 +11,7 @@ PL
 Kod źródłowy jest modyfikacją gotowej biblioteki Tello-Python opublikowanej przez użytkownika hanker-lu na GitHub.
 
 Opis misji:<br/><br/>
-<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/opis misji1.PNG" width="400" height="400"> <br/><br/>
+<img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/Opis misji1.PNG" width="400" height="400"> <br/><br/>
 
 
 Rysunek powyżej przedstawia poszczególne etapy wykonywane podczas misji naszego drona. Istotą zadania jest lot po wielokącie w sposób zbliżony do lotu po okręgu i wykonanie kilkunastu fotografii obiektowi znajdującemu się w centralnym punkcie okręgu (zaznaczony czerwoną kropką). <br/>
