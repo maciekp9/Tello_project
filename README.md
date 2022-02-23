@@ -32,7 +32,7 @@ d) Dron ląduje. <br/>
 4. Filmy pokazujące poprawne działanie projektu:
 - https://www.youtube.com/watch?v=_nwLo5d7gSs #Widok z perspektywy drona
 - https://www.youtube.com/watch?v=Pq0rOZ08Mts #Widok drona z trzeciej osoby
--    #Zeskanowany model
+- https://www.youtube.com/watch?v=RIzwL64q4wY #Zeskanowany model
 6. Uruchomienie projektu:
 - uruchomienie skryptu 'main.py' - trzeba ustawić dwa parametry ( stepNumber <- odpowiedzialny za ilość kroków oraz zdjęć, bok <- odpowiada za długość boku wielokąta foremnego, po którym dron ma swoją trajektorię lotu)
 - naciśnięcie przycisku 'Start mission' ( misja wykonuje się automatycznie)
@@ -76,7 +76,7 @@ d) The drone lands. <br/>
 4. Videos showing the correct operation of the project:
 - https://www.youtube.com/watch?v=_nwLo5d7gSs #Drone view
 - https://www.youtube.com/watch?v=Pq0rOZ08Mts #Drone view from third person
-- #Scanned model
+- https://www.youtube.com/watch?v=RIzwL64q4wY #Scanned model
 
 7. How to run project:
 - run the 'main.py' script - you need to set two parameters ( stepNumber <- responsible for the number of steps and photos, side <- responsible for the length of the side of the regular polygon along which the drone has its flight trajectory)
