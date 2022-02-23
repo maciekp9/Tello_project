@@ -28,6 +28,11 @@ class TelloUI:
         self.thread = None # thread of the Tkinter mainloop
         self.stopEvent = None  
         self.isMission = False
+        self.stepDone = False
+        self.stepNumber = 12
+        self.emergencyLandFlag = False
+        self.bok = 0.65
+
         # control variables
         self.distance = 0.1  # default distance for 'move' cmd
         self.degree = 30  # default degree for 'cw' or 'ccw' cmd
@@ -43,6 +48,8 @@ class TelloUI:
         self.btn_mission = tki.Button(self.root, text = "Start mission!", command = self.doMission)
 
         self.btn_mission.pack(sid="bottom", fill="both", expand="yes", padx=10,pady=5)
+
+        #self._land_emergency.pack(sid="bottom", fill="both", expand="yes", padx=10, pady=5)
 
         self.btn_snapshot = tki.Button(self.root, text="Snapshot!",
                                        command=self.takeSnapshot)
@@ -63,7 +70,12 @@ class TelloUI:
         # the most recently read frame
         self.stopEvent = threading.Event()
         self.thread = threading.Thread(target=self.videoLoop, args=())
+        self.thread2 = threading.Thread(target=self.doMission, args=())
+        self.thread3 = threading.Thread(target=self.emergency, args=())
+
+        self.thread2.start()
         self.thread.start()
+        self.thread3.start()
 
         # set a callback to handle when the window is closed
         self.root.wm_title("TELLO Controller")
@@ -253,24 +265,152 @@ class TelloUI:
         self.isMission = True
         print("Starting mission / isMission = " + str(self.isMission))
 
+        #Kolo 
         if self.isMission:
+            # wystartowanie drona
+            print("Bateria")
+            print(self.telloBattery())
+            self.waitSeconds(2)
+            print("Taking Off")
             self.telloTakeOff()
-            time.sleep(5)
-            self.telloMoveRight(100)
-            time.sleep(5)
-            self.telloMoveForward(100)
-            time.sleep(5)
-            self.telloMoveLeft(100)
-            time.sleep(5)
-            self.telloMoveBackward(100)
-            time.sleep(5)
-            self.telloLanding()
+            print("Waiting for response")
+
+            self.waitSeconds(5)
+
+            while True:
+                if self.telloResponse() == "ok":
+                    self.telloDown(0.35)
+                    print("Down")
+                    self.stepDone = True
+                    break
+
+            self.waitSeconds(4)
+
+            self.videoLoop()
+            self.waitSeconds(4)
+            while True:
+                if self.telloResponse() == "ok":
+                    self.takeSnapshot()
+                    print("Taking snapshot")
+                    self.stepDone = True
+                    break
+
+            self.waitSeconds(4)
+
+            for i in range(self.stepNumber):
+               
+                print(i)
+                if self.emergencyLandFlag:
+                    print("Awaryjne ladowanie")
+               
+                while True:
+                    if i == 0:
+                        if self.telloResponse() == "ok":
+                            print(self.telloResponse())
+                            print("Moving Left 0.1m")
+                            self.telloMove('left', (self.bok/2))
+                            self.stepDone = True
+                            break
+                    else:
+                        if self.telloResponse() == "ok":
+                            print(self.telloResponse())
+                            print("Moving Forward 100")
+                            self.telloMove('left', self.bok)
+                            self.stepDone = True
+                            break
+
+            
+                self.waitSeconds(4)
+                while True:
+                    if self.telloResponse() == "ok":
+                        print(self.telloResponse())
+                        print("Rotating to snapshot position")
+                        self.telloCW((360/self.stepNumber)/2)
+                        self.stepDone = True
+                        break
+
+                self.waitSeconds(4)
+                self.videoLoop()
+                self.waitSeconds(4)
+                while True:
+                    if self.telloResponse() == "ok":
+                        self.takeSnapshot()
+                        print("Taking snapshot")
+                        self.stepDone = True
+                        break
+
+                self.waitSeconds(4)
+
+                while True:
+                    if self.telloResponse() == "ok":
+                        print(self.telloResponse())
+                        print("Rotating to move forward position")
+                        self.telloCW((360 / self.stepNumber) / 2)
+                        self.stepDone = True
+                        break    
+
+            #     self.waitSeconds(3)
+            #
+            # while True:
+            #     if self.telloResponse() == "ok":
+            #         print(self.telloResponse())
+            #         print("Rotating to move forward position")
+            #         self.telloCW((360 / self.stepNumber) / 2)
+            #         self.stepDone = True
+            #         break
+
+
+
+
+
+
+
+            self.waitSeconds(4)
+
+            while True:
+                if self.telloResponse() == "ok":
+                    print(self.telloResponse())
+                    print("Moving Forward 100")
+                    self.telloMove('left', self.bok)
+                    self.stepDone = True
+                    break
+            self.waitSeconds(4)
+
+            while True:
+                if self.telloResponse()=="ok":
+                    print(self.telloResponse())
+                    print("Landing")
+                    self.telloLanding()
+                    self.stepDone = True
+                    break
 
             self.isMission = False
+            
 
 
-        pass
+    def emergency():
+        
+        while True:
+            if cv2.waitKey(33) == ord('q'):
+                self.emergencyLandFlag = True
 
+            
+
+
+
+    def waitSeconds(self,seconds):
+        start = time.time()
+        while True:
+          if time.time() - start > seconds:
+              self.stepDone = False
+              break
+
+        if self.emergencyLandFlag:
+            if self.telloResponse() == "ok":
+                print(self.telloResponse())
+                print("Landing")
+                self.telloLanding()
+                self.stepDone = True
 
 
 
@@ -325,6 +465,9 @@ class TelloUI:
     def telloCCW(self, degree):
         return self.tello.rotate_ccw(degree)
 
+    def telloMove(self, direction, distance):
+        return self.tello.move(direction, distance)
+
     def telloMoveForward(self, distance):
         return self.tello.move_forward(distance)
 
@@ -345,6 +488,12 @@ class TelloUI:
 
     def updateTrackBar(self):
         self.my_tello_hand.setThr(self.hand_thr_bar.get())
+
+    def telloResponse(self):
+        return self.tello.get_response()
+
+    def telloBattery(self):
+        return self.tello.get_battery()
 
     def updateDistancebar(self):
         self.distance = self.distance_bar.get()
