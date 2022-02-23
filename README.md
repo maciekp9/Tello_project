@@ -29,13 +29,13 @@ d) Dron ląduje. <br/>
 - Koniec misji 
 - Stworzenie modelu 3D w oprogramowaniu Meshroom
 
-4. Problemy?
-- Niepoprawnie wykonywana misja? Prawdopodobnie trzeba odpytać drona o aktualny stan
-- Jak zrealizować lot po okręgu?
-5. Screenshots:
+4. Filmy pokazujące poprawne działanie projektu:
+- https://www.youtube.com/watch?v=_nwLo5d7gSs #Widok z perspektywy drona
+- https://www.youtube.com/watch?v=Pq0rOZ08Mts #Widok drona z trzeciej osoby
+-    #Zeskanowany model
 6. Uruchomienie projektu:
-- instalacja biblioteki Tello-Python, wraz z niezbędnymi bibliotekami
-- uruchomienie skryptu 'main.py'
+- uruchomienie skryptu 'main.py' - trzeba ustawić dwa parametry ( stepNumber <- odpowiedzialny za ilość kroków oraz zdjęć, bok <- odpowiada za długość boku wielokąta foremnego, po którym dron ma swoją trajektorię lotu)
+- naciśnięcie przycisku 'Start mission' ( misja wykonuje się automatycznie)
 
 
 
