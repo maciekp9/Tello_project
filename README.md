@@ -50,20 +50,18 @@ EN
 
 1. Description:
 
-The main idea of our project in the subject "Identification and Control of Flying Robots" is to scan an object with a drone and create a 3D model of the object under study. The plan was implemented using DJI Tello flying robot, and Recap software from Autodesk. The source code is a modification of a ready-made Tello-Python library published by user hanker-lu on GitHub. <br/><br/>
+The main idea of our project in the subject "Identification and Control of Flying Robots" is to scan an object with a drone and create a 3D model of the object under study. The plan was implemented using DJI Tello flying robot, and Meshroom software from Alice Vision, and Meshlab software. The source code is a modification of the ready-made Tello-Python library published by user hanker-lu on GitHub. <br/><br/>
 
 Description of the mission:<br/><br/>
 <img src="https://github.com/maciekp9/Tello_project/blob/main/readme_images/Opis misji1.PNG" width="600" height="400"> <br/><br/>
 <br/><br/>
 
-The figure above shows the four phases performed during our drone's mission. The essence of the mission is to fly around a circle and take some photographs of an object inside the circle (marked with a red dot).
+The figure above shows the different steps performed during the mission of our drone. The essence of the mission is to fly around a polygon in a manner similar to flying around a circle, and to take several photographs of an object located at the central point of the circle (marked with a red dot). 
 The steps performed: <br/>
-(a) The drone takes off from a starting point with coordinates (0,0). Position the drone so that the object to be photographed is in front of it. The drone rises, takes the first photo. <br/>
-b) A circular flight to the point "I" follows, after which a rotation is made to a position that allows the corresponding photo to be taken. At the end of this step, a photograph is taken. <br/>
-c) Point 'B' is repeated for positions 'II', 'III' and 'IV'.
-d) The drone will land. <br/>
-
-
+(a) The drone takes off from the starting point. Drone must be in position which allows to take the first photo of object. The drone rises, takes the first photo.  <br/>
+b) Then the drone rotates by the calculated angle, covers the distance marked with a yellow line and rotates again in order to photograph the object in the central part of the frame.  <br/>
+c) Point 'B' is repeated until the set number of steps - the initial position - is reached. 
+d) The drone lands. <br/>
 
 
 2. Goals of our project:
@@ -71,18 +69,16 @@ d) The drone will land. <br/>
 - Starting the flight around the object (at one or two heights)
 - Photograph the object from different positions and upload the images to the computer
 - End of the mission 
-- Creation of a 3D model in Recap software
+- Create 3D model in Meshroom Software
 
 
-3. Problems:
-- Incorrect mission execution? IMHO the solution to this problem is to ask the drone about the current status
-- How to complete a circular flight?
 
-4.Screenshots:
-
+4. Videos showing the correct operation of the project:
+- https://www.youtube.com/watch?v=_nwLo5d7gSs #Drone view
+- https://www.youtube.com/watch?v=Pq0rOZ08Mts #Drone view from third person
+- #Scanned model
 
 7. How to run project:
-- Installation of the Tello-Python library, together with the necessary libraries
-- Running the 'main.py' script
- Pressing the Start Mission button
+- run the 'main.py' script - you need to set two parameters ( stepNumber <- responsible for the number of steps and photos, side <- responsible for the length of the side of the regular polygon along which the drone has its flight trajectory)
+- pressing the 'Start mission' button (the mission will be executed automatically)
 
